@@ -1,6 +1,9 @@
 # Introduction
 Source of my Battle for Wesnoth Campaign, Journey of a Frost Mage
 
+# Dependencies
+* [War of Legends era](https://github.com/knyghtmare/War_of_Legends)
+* [WISh, the War of Legends Inventory System](https://github.com/babaissarkar/WISh)
 
 # Translation commands
 From the add-ons directory :
