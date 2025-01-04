@@ -1,0 +1,9 @@
+{
+	"unit_type" : {
+		"base_unit" : {
+			"id" : "Elvish Avenger"
+		},
+		"id" : "Elvish Avenger JoaFM",
+		"amla" : ["default", "bow", "firebow", "magicbow"]
+	}
+}
