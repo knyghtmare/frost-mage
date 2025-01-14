@@ -1,0 +1,1 @@
+for x in aqua-initiate aqua-mage frost-mage; do spritesheet_gen ./$x $x-sheet.webp $x-coords.cfg 72 72 3; done
