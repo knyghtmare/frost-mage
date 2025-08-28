@@ -14,12 +14,19 @@ Highly appreciated and helpful to the future of this project!<br/>
 Some files in this repository use a **sugared WML syntax** for brevity.
 
 * **Self-closing tags** like `[tag ... /]` or `[tag {MACRO} /]` are allowed.
-* In `[specials slow magical]` expands to
+* Special shortcuts: 
+Something like `[specials slow magical]` expands to
 ```ini
 [specials]
 	{WEAPON_SPECIAL_SLOW}
 	{WEAPON_SPECIAL_MAGICAL}
 [/specials]
+```
+and something like `[abilities teleport]` exapnds to
+```init
+[abilities]
+    {ABILITY_TELEPORT}
+[/abilities]
 ```
 This is by **macro name** and not by **macro id**, the tool doesn't read your macro!
 
