@@ -13,7 +13,7 @@ Highly appreciated and helpful to the future of this project!<br/>
 
 Some files in this repository use a **sugared WML syntax** for brevity.
 
-* **Self-closing tags** like `[tag ... /]` or `[tag {payload} /]` are allowed.
+* **Self-closing tags** like `[tag ... /]` or `[tag {MACRO} /]` are allowed.
 * Before Wesnoth can read them, these files must be **syntax-expanded** to standard WML.
 * This repository includes a **expander tool** (`wml_expand.py`) that handles this conversion.
 
