@@ -23,7 +23,7 @@ Some files in this repository use a **sugared WML syntax** for brevity.
 * Run the expander tool to generate valid WML:
 
 ```bash
-python wml_expand.py path/to/file.cwml
+python wml_expand.py
 ```
 
 * **Original `.cwml` files are preserved**; output is written as `.cfg`.
