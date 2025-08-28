@@ -1,34 +1,28 @@
 #textdomain wesnoth-Frost_Mage
 [unit_type]
-    id=Aqua Mage JoaFM
-
+    id=Frost Mage JoaFM
     # wmllint: general spelling mage mages magery magecraft
     race=human
     gender=female
-    hitpoints=45
+    hitpoints=55
     movement_type=smallfoot
     movement=6
-    experience=62
-    level=2
+    experience=120
+    level=3
     alignment=neutral
     advances_to=null
-    cost=48
+    cost=70
     usage=mixed fighter
-    description= _ "Some people show an unusual affinity to water and ice, and the corresponding magic, a trait hitherto thought to be found only in merfolk. After some serious training, their skill in manipulating water is much higher. Their affinity to water magic also grants them higher mobility in water."
+    description= _ "Long time spent on understanding the properties of water and the corresponding magic can eventually grant the mage valuable insights on the properties on matter itself. No longer limited to manipulation of liquids, they are now capable of modifying the intrinsic coldness of surronding matter itself. When challenged, they can easily turn their opponents into a living statue of ice or decimate them with massive water waves out of nowhere."
 
-    name= _ "female^Aqua Mage"
-    # image="units/human-magi/aqua-mage+female.png~RC(magenta>blue)"
-    image={AQUA-MAGE+FEMALE}
-    small_profile="portraits/humans/mage-aqua+female.png~FL()"
-    profile="portraits/humans/mage-aqua+female.webp"
+    name= _ "female^Frost Mage"
+    image={FROST-MAGE+FEMALE}
+    small_profile="portraits/humans/mage-frost+female.png~FL()"
+    profile="portraits/humans/mage-frost+female.png"
     die_sound={SOUND_LIST:HUMAN_FEMALE_DIE}
-    {DEFENSE_ANIM {AQUA-MAGE+FEMALE-DEFEND} {AQUA-MAGE+FEMALE} {SOUND_LIST:HUMAN_FEMALE_HIT} }
+    {DEFENSE_ANIM {FROST-MAGE+FEMALE-DEFEND} {FROST-MAGE+FEMALE} {SOUND_LIST:HUMAN_FEMALE_HIT} }
 
     {HP_AMLA}
-    {SUBMERGE_AMLA}
-    {RESISTANCE_AMLA}
-
-    {LVL_UP_AMLA_2}
 
     [movement_costs]
     	deep_water=1
@@ -40,99 +34,76 @@
         sand=3
     [/movement_costs]
     [defense]
-    	deep_water=50
-    	shallow_water=40
-    	reef=40
-    	swamp_water=50
+    	deep_water=40
+    	shallow_water=30
+    	reef=20
+    	swamp_water=40
     	hills=60
-    	mountains=60
-    	frozen=50
+    	mountains=70
+    	frozen=40
     [/defense]
     [resistance]
     	cold=10
     	arcane=30
-    	fire=80
-        electric=120
+    	fire=90
+        electric=130
         water=0
     [/resistance]
     [attack]
         name=staff
-        description=_"staff"
+        description=_"frost staff"
         icon=attacks/staff-magic.png
         type=impact
         range=melee
-        damage=6
+        damage=7
         number=2
     [/attack]
     [attack]
-        name=aquablast
-        description=_"aqua blast"
-        icon=attacks/waterspray.png
-        type=water
+        name=iceblast
+        description=_"ice blast"
+        icon=attacks/iceball.png
+        type=cold
         range=ranged
-        [specials]
-            {WEAPON_SPECIAL_MAGICAL}
-        [/specials]
-        damage=7
+        damage=9
         number=6
+        [specials {WEAPON_SPECIAL_MAGICAL} {JOAFM_WEAPON_SPECIAL_FREEZES}]
     [/attack]
     [attack]
         name=wave
-        description=_"wave attack"
+        description=_"crashing wave"
         icon=attacks/fog-blue-3.png
         type=impact
         range=ranged
-        [specials]
-            {WEAPON_SPECIAL_MAGICAL}
-        [/specials]
-        damage=18
+        damage=20
         number=2
+        [specials {WEAPON_SPECIAL_MAGICAL} {WEAPON_SPECIAL_STUN}]
     [/attack]
     [attack_anim]
-        [filter_attack]
-            name=aquablast,wave
-        [/filter_attack]
+        [filter_attack name=iceblast,wave]
 
         start_time=-420
 
         {MERMAID_WATER_BLAST_HALO}
-        {MAGIC_MISSILE 11 -20}
+        {AQUA_BLAST 11 -20}
         {MERMAID_STAFF_FLARE 16 -12}
 
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-MAGIC1}:100
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-MAGIC2}:700
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-MAGIC1}:200
-        [/frame]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-MAGIC1}:100]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-MAGIC2}:700]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-MAGIC1}:200]
     [/attack_anim]
     [attack_anim]
-        [filter_attack]
-            name=staff
-        [/filter_attack]
-        [frame]
-            image={AQUA-MAGE+FEMALE}:50
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-STAFF1}:100
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-STAFF2}:200
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE-ATTACK-MAGIC1}:50
-        [/frame]
-        [frame]
-            image={AQUA-MAGE+FEMALE}:50
-        [/frame]
+        [filter_attack name=staff]
+        
+        [frame image={FROST-MAGE+FEMALE}:50]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-STAFF1}:100]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-STAFF2}:200]
+        [frame image={FROST-MAGE+FEMALE-ATTACK-MAGIC1}:50]
+        [frame image={FROST-MAGE+FEMALE}:50]
     [/attack_anim]
 
     # TODO
     #  [male]
-    #      name= _ "Aqua Mage"
+    #      name= _ "Frost Mage"
     #      image="units/human-magi/red-mage.png~RC(magenta>blue)"
     #      profile="portraits/humans/mage-red.png~RC(magenta>blue)"
     #      die_sound={SOUND_LIST:HUMAN_DIE}
@@ -140,7 +111,7 @@
 
     #      [attack_anim]
     #          [filter_attack]
-    #              name=aquablast
+    #              name=iceblast
     #          [/filter_attack]
 
     #          start_time=-420
