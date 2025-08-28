@@ -28,6 +28,7 @@ python wml_expand.py
 
 * **Original `.cwml` files are preserved**; output is written as `.cfg`.
 * Always backup before testing or editing `.cwml` files.
+* If you want to make use of the new syntax, be my guest! Just rename the file from `.cfg` to `.cwml` and use new syntax. That's it! If you want to use it in your repo, I'm more than happy to lend my support. Just copy the two python scripts to your Add-on root, convert files to `.cwml`, and run the `wml_expand.py` script before you run/publish your addon. (Wesnoth doesn't understand what `.cwml` is.)
 
 This ensures that **Wesnoth-ready WML** is generated from the concise, wacky syntax used for development.
 
