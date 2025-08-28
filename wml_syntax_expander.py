@@ -18,11 +18,16 @@ def expand_inline_or_self_closing(line):
     if not expand:
         return line
     if content:
-        args = [
-            f"{{WEAPON_SPECIAL_{arg.upper()}}}" if (tag == "specials") else arg
-            for arg in re.split(r"\s+", content)
-        ]
-        content_body = "\n".join(f"{indent}    {arg}" for arg in args)
+        args: list[str] = []
+        for arg in re.split(r"\s+", content):
+            if (tag == "specials"):
+                args.append(f"{{WEAPON_SPECIAL_{arg.upper()}}}")
+            elif (tag == "abilities"):
+                args.append(f"{{ABILITY_{arg.upper()}}}")
+            else:
+                args.append(arg)
+
+        content_body = "\n".join(f"{indent}    {a}" for a in args)
         return f"{indent}[{tag}]\n{content_body}\n{indent}[/{tag}]"
     else:
         return f"{indent}[{tag}]\n{indent}[/{tag}]"
