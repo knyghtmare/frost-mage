@@ -14,8 +14,16 @@ Highly appreciated and helpful to the future of this project!<br/>
 Some files in this repository use a **sugared WML syntax** for brevity.
 
 * **Self-closing tags** like `[tag ... /]` or `[tag {MACRO} /]` are allowed.
-* Before Wesnoth can read them, these files must be **syntax-expanded** to standard WML.
-* This repository includes a **expander tool** (`wml_expand.py`) that handles this conversion.
+* In `[specials slow magical]` expands to
+```ini
+[specials]
+	{WEAPON_SPECIAL_SLOW}
+	{WEAPON_SPECIAL_MAGICAL}
+[/specials]
+```
+This is by **macro name** and not by **macro id**, the tool doesn't read your macro!
+
+Before Wesnoth can read them, these files must be **syntax-expanded** to standard WML. This repository includes a **expander tool** (`wml_expand.py`) that handles this conversion.
 
 ### For Contributors
 

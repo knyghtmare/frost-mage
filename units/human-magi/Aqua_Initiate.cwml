@@ -65,7 +65,7 @@
         icon=attacks/waterspray.png
         type=water
         range=ranged
-        [specials {WEAPON_SPECIAL_MAGICAL}]
+        [specials magical]
         damage=6
         number=4
     [/attack]

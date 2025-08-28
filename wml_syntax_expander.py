@@ -12,14 +12,18 @@ def expand_inline_or_self_closing(line):
     if not match:
         return line
     indent, tag, content, slash = match.groups()
-    content = content.strip()
-    # Expand if self-closing, inline with = or space, or if it contains {payload}
+    # Expand if self-closing, inline with = or space, or if it contains {macro}
     expand = slash == "/" or "=" in content or " " in content or (content.startswith("{") and content.endswith("}"))
+    content = content.strip()
     if not expand:
         return line
     if content:
-        content_lines = "\n".join(f"{indent}    {l}" for l in content.splitlines())
-        return f"{indent}[{tag}]\n{content_lines}\n{indent}[/{tag}]"
+        args = [
+            f"{{WEAPON_SPECIAL_{arg.upper()}}}" if (tag == "specials") else arg
+            for arg in re.split(r"\s+", content)
+        ]
+        content_body = "\n".join(f"{indent}    {arg}" for arg in args)
+        return f"{indent}[{tag}]\n{content_body}\n{indent}[/{tag}]"
     else:
         return f"{indent}[{tag}]\n{indent}[/{tag}]"
 

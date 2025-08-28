@@ -72,7 +72,7 @@
         range=ranged
         damage=7
         number=6
-        [specials {WEAPON_SPECIAL_MAGICAL}]
+        [specials magical]
     [/attack]
     [attack]
         name=wave
@@ -80,7 +80,7 @@
         icon=attacks/fog-blue-3.png
         type=impact
         range=ranged
-        [specials {WEAPON_SPECIAL_MAGICAL}]
+        [specials magical]
         damage=18
         number=2
     [/attack]
