@@ -10,17 +10,17 @@
 	{DEFAULT_SCHEDULE}
 
 	[label]
-        x,y=12,8
-        text= _ "Noct"
-    [/label]
+		x,y=12,8
+		text= _ "Noct"
+	[/label]
 	[label]
-        x,y=23,9
-        text= _ "R. Siverrill"
-    [/label]
+		x,y=23,9
+		text= _ "R. Siverrill"
+	[/label]
 	[label]
-        x,y=30,15
-        text= _ "Diurna"
-    [/label]
+		x,y=30,15
+		text= _ "Diurna"
+	[/label]
 
 	[side]
 		side=1
@@ -99,5 +99,21 @@
 		{MSG liyesa (_"No, ancestor, no! Don't say such horrible words.")}
 		{MSG eliel (_"Let us just hope we don't come to that.")}
 		{MSG mage (_"I would prefer not to fight someone out of books. Enough confusion already!")}
+
+		[objectives]
+			side=1
+			[objective]
+				description= _ "Reach the end of the path."
+				condition=win
+			[/objective]
+			[objective]
+				description= _ "Death of Heros."
+				condition=lose
+			[/objective]
+
+			{TURNS_RUN_OUT}
+		[/objectives]
+
+		{HIGHLIGHT_IMAGE 38 21 scenery/signpost.png ()}
 	[/event]
 [/scenario]
