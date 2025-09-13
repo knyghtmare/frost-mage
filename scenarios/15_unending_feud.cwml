@@ -21,13 +21,18 @@
 		x,y=30,15
 		text= _ "Diurna"
 	[/label]
+	[item]
+		x,y=53,20
+		image=scenery/signpost.png
+	[/item]
 
 	[side]
 		side=1
 		controller=human
 		team_name=good
 		{INCOME 0 0 0}
-		{GOLD 200 200 200}
+		{GOLD 120 100 100}
+		village_gold=0
 		fog=yes
 		shroud=yes
 		team_name=erinna
@@ -70,8 +75,8 @@
 		name=start
 
 		{MSG eliel (_"This is bad. We must cross this river fast, or the black ones will soon catch us.")}
-		{MSG kalenz (_"The only way for us is through these cities. The bridge should still be intact. One of your friends can fly and the other can walk on water. But we can do neither.")}
-		{MSG eliel (_"So you sent them to delay the attackers, while we cross the river using the bridge?")}
+		{MSG kalenz (_"One of your friends can fly and the other can walk on water. But we can do neither. So the only way for us is through these cities. The bridge should still be intact. ")}
+		{MSG eliel (_"You sent them to delay the attackers, while we cross the river using the bridge?")}
 		{MSG kalenz (_"Correctly said. They can cross the river anywhere. Not us. We must take the most perilous route. Time and fate are not in our favour.")}
 		{MSG liyesa (_"I don't like the looks of this city. It feels bad, evil.")}
 		{MSG eliel (_"Our scouts have spotted unnatural silhouettes. Could only be undead.")}
@@ -91,7 +96,7 @@
 		{STORE mage KILL=no}
 		{MSG kalenz (_"My name is <i>Kalenz</i>.")}
 		{MSG narrator (_"The group lost their speech for a while. Then finally $mage.name spoke.")}
-		{MSG mage (_"My lord, you mean the same person who helped Prince Konrad the first? That was <i>about a thousand years ago</i>!")}
+		{MSG mage (_"My lord, you mean the same person who helped Prince Konrad the first? That was <i>hundreds of years ago</i>!")}
 		[delay time=50]
 		{MSG kalenz (_"(<i>Extreme sadness</i>) Such... is the nature of my <i>curse</i>.")}
 		{MSG kalenz (_"I have developed some sort of awareness regarding the Undead. I can tell you before they arrive. But, I may also become one of them... if we stay close to the Undead for long.")}
@@ -103,7 +108,7 @@
 		[objectives]
 			side=1
 			[objective]
-				description= _ "Reach the end of the path."
+				description= _ "Cross the cities and find the way out."
 				condition=win
 			[/objective]
 			[objective]
@@ -113,7 +118,5 @@
 
 			{TURNS_RUN_OUT}
 		[/objectives]
-
-		{HIGHLIGHT_IMAGE 38 21 scenery/signpost.png ()}
 	[/event]
 [/scenario]
